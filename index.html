@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Instagram Revenue Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Revenue Calculator</h1>
+        <form id="revenue-form">
+            <label for="instagram-handle">Instagram Handle:</label>
+            <input type="text" id="instagram-handle" placeholder="@examplehandle">
+            
+            <p>OR</p>
+            
+            <label for="followers">Followers:</label>
+            <input type="number" id="followers" placeholder="e.g., 10000">
+            
+            <label for="engagement-rate">Engagement Rate (%):</label>
+            <input type="number" id="engagement-rate" placeholder="e.g., 5">
+            
+            <button type="submit">Calculate Revenue</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 
