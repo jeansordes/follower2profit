@@ -8,7 +8,7 @@ function refreshOutput() {
     const conversionRate = parseFloat(dom('#conversion-rate').value) || 3;
     const highTicketOfferPrice = parseFloat(dom('#premium-price').value) || 500;
 
-    const revenue = followers * (engagementRate / 100) * conversionRate * highTicketOfferPrice;
+    const revenue = followers * (engagementRate / 100) * (conversionRate / 100) * highTicketOfferPrice;
 
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `${followers} Followers
