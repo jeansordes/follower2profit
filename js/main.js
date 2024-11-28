@@ -1,13 +1,34 @@
-document.getElementById('revenue-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+function dom(query) {
+    return document.querySelector(query);
+}
 
-    const followers = parseInt(document.getElementById('followers').value) || 0;
-    const engagementRate = parseFloat(document.getElementById('engagement-rate').value) || 0;
-    const conversionRate = 0.03; // 3%
-    const highTicketOfferPrice = 1500; // €1500
+function refreshOutput() {
+    const followers = parseInt(dom('#audience-size').value) || 0;
+    const engagementRate = parseFloat(dom('#engagement-rate').value) || 2;
+    const conversionRate = parseFloat(dom('#conversion-rate').value) || 3;
+    const highTicketOfferPrice = parseFloat(dom('#premium-price').value) || 500;
 
     const revenue = followers * (engagementRate / 100) * conversionRate * highTicketOfferPrice;
 
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `With ${followers} followers and an engagement rate of ${engagementRate}%, you could generate €${revenue.toFixed(2)} in revenue with a high-ticket offer.`;
-}); 
+    resultDiv.innerHTML = `${followers} Followers
+    <br/> × ${engagementRate}% : taux d'engagement
+    <br/> × ${conversionRate}% : taux de conversion
+    <br/> × ${highTicketOfferPrice}€ : prix moyen de l'offre
+    <br/> = ${revenue.toLocaleString('fr-FR', { minimumFractionDigits: 0, maximumFractionDigits: revenue % 1 === 0 ? 0 : 2 })} € de revenus par campagne`;
+
+    // Afficher le résultat
+    document.getElementById('result').style.display = 'block';
+}
+
+refreshOutput();
+
+// Add event listeners to input fields to call refreshOutput on input change
+dom('#audience-size').addEventListener('input', refreshOutput);
+dom('#engagement-rate').addEventListener('input', refreshOutput);
+dom('#conversion-rate').addEventListener('input', refreshOutput);
+dom('#premium-price').addEventListener('input', refreshOutput);
+
+document.getElementById('revenue-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+});

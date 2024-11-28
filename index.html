@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>Instagram Revenue Calculator</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Instagram Revenue Calculator</h1>
         <form id="revenue-form">
             <label for="instagram-handle">Instagram Handle:</label>
             <input type="text" id="instagram-handle" placeholder="@examplehandle">
-            
+
             <p>OR</p>
+
+            <!-- TODO:
+                - Avoir un drop down pour voir / customiser toutes les options
+                    - Taille de l’audience : nombre de followers.
+                    - Taux d'engagement : pourcentage moyen de personnes réactives (likes, commentaires, clics).
+                    - Taux de conversion : % d'abonnés qui pourraient devenir clients (~2-5% est courant).
+                    - Prix moyen d’une offre premium : par exemple, 500€ ou plus.
+                - Avoir un slider et "+/-" en plus du champs de texte
+                - Faire fonctionner la connexion à Instagram
+             -->
+            <label for="audience-size">Followers</label>
+            <input type="number" id="audience-size" placeholder="Ex: 5000" min="0" step="100">
             
-            <label for="followers">Followers:</label>
-            <input type="number" id="followers" placeholder="e.g., 10000">
-            
-            <label for="engagement-rate">Engagement Rate (%):</label>
-            <input type="number" id="engagement-rate" placeholder="e.g., 5">
-            
-            <button type="submit">Calculate Revenue</button>
+            <div>
+                <label for="engagement-rate">Taux d'engagement (%)</label>
+                <input type="number" id="engagement-rate" placeholder="~2-5% est courant" value="2" min="0"
+                    max="100" step="0.5">
+            </div>
+
+            <div>
+                <label for="conversion-rate">Taux de conversion (%)</label>
+                <input type="number" id="conversion-rate" placeholder="~2-5% est courant" value="3" min="0"
+                    max="100" step="0.5">
+            </div>
+
+            <div>
+                <label for="premium-price">Prix moyen d'une offre premium (€)</label>
+                <input type="number" id="premium-price" placeholder="500€ est courant" min="0" step="1" value="500">
+            </div>
         </form>
         <div id="result" class="result"></div>
     </div>
     <script src="js/main.js"></script>
 </body>
-</html> 
+
+</html>

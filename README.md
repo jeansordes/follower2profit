@@ -49,11 +49,6 @@ The CSS styles create a clean and modern look, focusing on usability and respons
 
 The JavaScript file handles form submission, calculates the revenue based on the provided formula, and dynamically updates the result section. It includes basic input validation to ensure that numbers are entered for manual inputs.
 
-## Next Steps
-
-- Enhance the application by implementing optional features, such as Instagram API integration and email collection.
-- Test the application across different browsers and devices for responsiveness.
-
 ## How to Run the App
 
 1. Clone the repository or download the files.

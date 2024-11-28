@@ -34,6 +34,12 @@ input {
     border-radius: 4px;
 }
 
+label, input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 button {
     padding: 10px;
     background-color: gold;
@@ -51,4 +57,19 @@ button:hover {
     padding: 15px;
     background: #e7f3fe;
     border-left: 6px solid #2196F3;
-} 
+}
+
+.row>* {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 700px) {
+    .row {
+        display: block;
+    }
+}
