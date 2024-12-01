@@ -15,7 +15,7 @@ function refreshOutput() {
     <br/> × ${engagementRate}% : taux d'engagement
     <br/> × ${conversionRate}% : taux de conversion
     <br/> × ${highTicketOfferPrice}€ : prix moyen de l'offre
-    <br/> = ${revenue.toLocaleString('fr-FR', { minimumFractionDigits: 0, maximumFractionDigits: revenue % 1 === 0 ? 0 : 2 })} € de revenus par campagne`;
+    <br/> = <b>${revenue.toLocaleString('fr-FR', { minimumFractionDigits: 0, maximumFractionDigits: revenue % 1 === 0 ? 0 : 2 })} € de revenus par campagne</b>`;
 
     // Afficher le résultat
     document.getElementById('result').style.display = 'block';
