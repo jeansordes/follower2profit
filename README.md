@@ -45,3 +45,4 @@ The JavaScript file handles form submission, calculates the revenue based on the
 ## Next Steps
 
 - [ ] Add email collection functionality to send analysis results to users.
+- [ ] Have a version without details, just the result.
